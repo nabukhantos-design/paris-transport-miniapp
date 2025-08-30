@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Paris Transport Live</title>
+<link rel="preconnect" href="https://telegram.org" />
+<link rel="stylesheet" href="./styles.css" />
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script defer src="./i18n.js"></script>
+<script defer src="./app.js"></script>
+</head>
+<body>
+<header>
+<div class="left">
+<span id="lineChip" class="chip">—</span>
+<span id="stopName">—</span>
+</div>
+<div class="right">
+<select id="lang">
+<option value="ru">RU</option>
+<option value="fr">FR</option>
+<option value="en">EN</option>
+</select>
+<span id="status" class="status"></span>
+</div>
+</header>
+
+
+<div class="seg" id="modeTabs">
+<button data-mode="bus" class="active">Bus</button>
+<button data-mode="metros">Metro</button>
+<button data-mode="rers">RER</button>
+<button data-mode="tramways">Tram</button>
+</div>
+
+
+<div class="grid">
+<label>
+<span data-i18n="line">Линия</span>
+<input id="line" placeholder="38" />
+</label>
+<label>
+<span data-i18n="stop">Остановка / станция</span>
+<input id="stop" placeholder="gare du nord" />
+</label>
+<label>
+<span data-i18n="direction">Направление</span>
+<select id="dir">
+<option value="A">A</option>
+<option value="R">R</option>
+</select>
+</label>
+</div>
+
+
+<div class="toolbar">
+<label class="small"><input id="auto" type="checkbox" checked /> <span data-i18n="autoRefresh">Автообновление</span></label>
+<button id="refresh" data-i18n="refresh">Обновить</button>
+<button id="saveFav">★ <span data-i18n="addFav">В избранное</span></button>
+</div>
+
+
+<div id="list"></div>
+
+
+<footer>
+<span class="small" data-i18n="disclaimer">Данные предоставляются публичным RATP API. Время — оценочное.</span>
+</footer>
+</body>
+</html>
