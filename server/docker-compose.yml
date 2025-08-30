@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+app:
+build: .
+environment:
+- BOT_TOKEN=${BOT_TOKEN}
+- WEBAPP_URL=${WEBAPP_URL}
+- PORT=8080
+- PUBLIC_BASE_URL=${PUBLIC_BASE_URL}
+- TZ=Europe/Paris
+ports:
+- "8080:8080"
+volumes:
+- ./data:/app
